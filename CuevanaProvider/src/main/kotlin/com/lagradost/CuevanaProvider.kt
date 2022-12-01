@@ -237,7 +237,7 @@ class CuevanaProvider : MainAPI() {
                 tomatoRegex.findAll(iframe).map { tomreg ->
                     tomreg.value
                 }.toList().apmap { tom ->
-                    val tomkey = tom.replace("//apialfa.tomatomatela.com/ir/player.php?h=", "")
+                    val tomkey = tom.replace("//apialfa.tomatomatela.club/ir/player.php?h=", "")
                     app.post(
                         "https://apialfa.tomatomatela.club/ir/rd.php", allowRedirects = false,
                         headers = mapOf(
