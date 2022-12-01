@@ -233,15 +233,15 @@ class CuevanaProvider : MainAPI() {
             }
             if (iframe.contains("tomatomatela")) {
                 val tomatoRegex =
-                    Regex("(\\/\\/apialfa.tomatomatela.com\\/ir\\/player.php\\?h=[a-zA-Z0-9]{0,8}[a-zA-Z0-9_-]+)")
+                    Regex("(\\/\\/apialfa.tomatomatela.club\\/ir\\/player.php\\?h=[a-zA-Z0-9]{0,8}[a-zA-Z0-9_-]+)")
                 tomatoRegex.findAll(iframe).map { tomreg ->
                     tomreg.value
                 }.toList().apmap { tom ->
                     val tomkey = tom.replace("//apialfa.tomatomatela.com/ir/player.php?h=", "")
                     app.post(
-                        "https://apialfa.tomatomatela.com/ir/rd.php", allowRedirects = false,
+                        "https://apialfa.tomatomatela.club/ir/rd.php", allowRedirects = false,
                         headers = mapOf(
-                            "Host" to "apialfa.tomatomatela.com",
+                            "Host" to "apialfa.tomatomatela.club",
                             "User-Agent" to USER_AGENT,
                             "Accept" to "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
                             "Accept-Language" to "en-US,en;q=0.5",
